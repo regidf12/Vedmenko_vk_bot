@@ -34,7 +34,7 @@ The token can be obtained in the community settings, you can also log in through
     TOKEN = ''
 To send notifications to admins, use their id
 
-    admin_ad = ''
+    admin_id = ''
 
 Write the command in the terminal:
 
