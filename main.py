@@ -132,8 +132,8 @@ if __name__ == '__main__':
                 keyboard.add_line()
                 keyboard.add_openlink_button(label='Перейти на сайт', link='https://vedmenkoprod.ru/')
                 send_some_msg(user_id, "Чем мы можем вам помочь?"
-                                       " Для получения большей информации о нас или заказе услуг"
-                                       " перейдите на наш сайт", keyboard)
+                                       " Для получения большей информации о нас и заказах услуг"
+                                       " перейдите на наш сайт или свяжитес наими через наши контакты.", keyboard)
             if msg == "задать вопрос":
                 keyboard = VkKeyboard(one_time=True)
                 keyboard.add_button('На главную', VkKeyboardColor.SECONDARY)
