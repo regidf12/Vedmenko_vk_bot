@@ -24,25 +24,24 @@ If you are cloning a project, run it first, otherwise you can download the sourc
     
 You will need to install the libraries before starting the assistant
 
-    pip install aiogram
+    pip install vk_api
     
 You will also need a token to run your bot
 
 ## Usege :information_source:
+The token can be obtained in the community settings, you can also log in through your profile. Insert the token into the config file.
 
     TOKEN = ''
+To send notifications to admins, use their id
 
-Also get the ID of the group where you will add the bot - @username_to_id_bot. Enter in id group.
-
-    GROUP_ID = ()
+    admin_ad = ''
 
 Write the command in the terminal:
 
     python main.py
 
 About the code:
-- The folder messages.py contains prepared messages
-- The folder keyboards.py contains the speed dial functions
-- The folder filters.py contains the administrator authentication function
+- The file words.py contains prepared messages
+- The file config.py contains login information
 
 Hope this code helps you :crown:
