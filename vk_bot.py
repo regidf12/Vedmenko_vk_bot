@@ -1,8 +1,17 @@
 import vk_api
-from config import TOKEN, admin_id, admin_id_2, admin_id_3
-from words import word
+
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
+
+admin_id = '225396367'
+
+admin_id_2 = '303218316'
+
+admin_id_3 = '349580930'
+
+word = ["привет!", "здравствуйте!", "hi!", "hello!", "Ку!", "как дела?", "привет", "здравствуйте", "hi", "hello", "ку"]
+
+TOKEN = 'vk1.a.umeLx7lev1u7fxBNSUV6WKIsU4n3fQf1L_mIA6xuyeehL4lYdSf6XJhSEs41g5Vs74PKm1HNGwQZfh5nX26VSBz2UGg00NntdB5qGV4dmnHXd50_sBJJ6nFBRa2YILGns5O0gg9urP9IE1JHdXpnYqVS-j5Z9EM2dwBdCaXQFHGp7Yg6RzAnD56hXzp1E9uK'
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
@@ -131,6 +140,10 @@ if __name__ == '__main__':
                 keyboard.add_button('Сделать заказ', VkKeyboardColor.SECONDARY)
                 keyboard.add_line()
                 keyboard.add_openlink_button(label='Перейти на сайт', link='https://vedmenkoprod.ru/')
+                keyboard.add_line()
+                keyboard.keyboard.add_vkpay_button('Поддержать разработчика')
+                keyboard.add_line()
+                keyboard.add_openlink_button(label='Сообщить об ошибке', link='https://vk.com/white_prince_ex0')
                 send_some_msg(user_id, "Чем мы можем вам помочь?"
                                        " Для получения большей информации о нас и заказах услуг"
                                        " перейдите на наш сайт или свяжитес наими через наши контакты.", keyboard)
