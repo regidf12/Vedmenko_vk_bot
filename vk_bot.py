@@ -11,7 +11,7 @@ admin_id_3 = '349580930'
 
 word = ["привет!", "здравствуйте!", "hi!", "hello!", "Ку!", "как дела?", "привет", "здравствуйте", "hi", "hello", "ку"]
 
-TOKEN = 'vk1.a.umeLx7lev1u7fxBNSUV6WKIsU4n3fQf1L_mIA6xuyeehL4lYdSf6XJhSEs41g5Vs74PKm1HNGwQZfh5nX26VSBz2UGg00NntdB5qGV4dmnHXd50_sBJJ6nFBRa2YILGns5O0gg9urP9IE1JHdXpnYqVS-j5Z9EM2dwBdCaXQFHGp7Yg6RzAnD56hXzp1E9uK'
+TOKEN = ''
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
