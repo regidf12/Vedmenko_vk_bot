@@ -1,4 +1,5 @@
 import vk_api
+import re
 
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
@@ -9,9 +10,7 @@ admin_id_2 = '303218316'
 
 admin_id_3 = '349580930'
 
-word = ["привет!", "здравствуйте!", "hi!", "hello!", "Ку!", "как дела?", "привет", "здравствуйте", "hi", "hello", "ку"]
-
-TOKEN = 'vk1.a.umeLx7lev1u7fxBNSUV6WKIsU4n3fQf1L_mIA6xuyeehL4lYdSf6XJhSEs41g5Vs74PKm1HNGwQZfh5nX26VSBz2UGg00NntdB5qGV4dmnHXd50_sBJJ6nFBRa2YILGns5O0gg9urP9IE1JHdXpnYqVS-j5Z9EM2dwBdCaXQFHGp7Yg6RzAnD56hXzp1E9uK'
+TOKEN = ''
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
@@ -101,20 +100,26 @@ def get_back():
         keyboard.add_button('Сделать заказ', VkKeyboardColor.SECONDARY)
         keyboard.add_line()
         keyboard.add_openlink_button(label='Перейти на сайт', link='https://vedmenkoprod.ru/')
+        keyboard.add_line()
+        keyboard.add_vkpay_button(hash="action=transfer-to-group&group_id=160010948&aid=903245643")
+        keyboard.add_line()
+        keyboard.add_openlink_button(label='Сообщить об ошибке', link='https://vk.com/white_prince_ex0')
         send_some_msg(user_id, "Что вас интересует?", keyboard)
 
 
-def send_question():
+def send_question(message):
     keyboard = VkKeyboard(one_time=True)
     keyboard.add_openlink_button(label='Перейти в чаты', link='https://vk.com/gim160010948?peers=303218316')
-    send_some_msg(admin_id, "Пришел вопрос", keyboard)
+    send_some_msg(admin_id, '{"Пришел вопрос"}', keyboard)
     send_some_msg(admin_id_2, "Пришел вопрос", keyboard)
     send_some_msg(admin_id_3, "Пришел вопрос", keyboard)
 
 
 def greater(message):
-    for i in word:
-        if message == i:
+    pattern = [r"привет", r"здравствуйте"]
+    for i in pattern:
+        match = re.search(i, message)
+        if match:
             keyboard = VkKeyboard(one_time=True)
             keyboard.add_button('Начать', VkKeyboardColor.PRIMARY)
             send_some_msg(user_id, "Здравствуйте, Vedmenko Production - это молодой, перспективный Видеопродакшн."
@@ -122,6 +127,11 @@ def greater(message):
                                    " который популяризирует ваш бренд, привлекает большое количество клиентов"
                                    " и дарит много позитивных эмоций от готового продукта."
                                    " Для начала работы нажмите на кнопку 'Начать'.", keyboard)
+
+
+def echo(message):
+    if message.stiker_id:
+        send_some_msg(user_id, "Мне не понятно это сообщение")
 
 
 if __name__ == '__main__':
@@ -141,12 +151,13 @@ if __name__ == '__main__':
                 keyboard.add_line()
                 keyboard.add_openlink_button(label='Перейти на сайт', link='https://vedmenkoprod.ru/')
                 keyboard.add_line()
-                keyboard.keyboard.add_vkpay_button('Поддержать разработчика')
+                keyboard.add_vkpay_button(hash="action=transfer-to-group&group_id=160010948&aid=903245643")
                 keyboard.add_line()
                 keyboard.add_openlink_button(label='Сообщить об ошибке', link='https://vk.com/white_prince_ex0')
                 send_some_msg(user_id, "Чем мы можем вам помочь?"
                                        " Для получения большей информации о нас и заказах услуг"
-                                       " перейдите на наш сайт или свяжитес наими через наши контакты.", keyboard)
+                                       " перейдите на наш сайт или свяжитес наими через наши контакты. "
+                                       "Можете поддержать нашего разработчика нажав на конпку Vkpay", keyboard)
             if msg == "задать вопрос":
                 keyboard = VkKeyboard(one_time=True)
                 keyboard.add_button('На главную', VkKeyboardColor.SECONDARY)
@@ -155,7 +166,7 @@ if __name__ == '__main__':
                     if event.type == VkEventType.MESSAGE_NEW and event.to_me:
                         send_some_msg(user_id, "Спасибо за ваш вопрос. "
                                                "Мы ответим на него в течении 24 часов", keyboard)
-                        send_question()
+                        send_question(msg)
                         break
             if msg == "сделать заказ":
                 keyboard = VkKeyboard(one_time=True)
