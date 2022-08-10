@@ -10,12 +10,7 @@ admin_id_2 = '303218316'
 
 admin_id_3 = '349580930'
 
-<<<<<<< HEAD
-=======
-word = ["привет!", "здравствуйте!", "hi!", "hello!", "Ку!", "как дела?", "привет", "здравствуйте", "hi", "hello", "ку"]
-
->>>>>>> 794056ca76f8736559eb9b25a938848d50a84838
-TOKEN = ''
+TOKEN = 'vk1.a.54KQQs-zBZ6bkh-UozaNE3klxpZ8azdc9Azi80_ceaDwFKHEC1i4bgVHr7MFYwfu2gIbn7HcMsM4ZX_f2_a1tKiquB3ucpE-A3gv53MWFRNDvu-iRm0AKRDn4xSYJ1ENCiYmv2Ljzc6nGU371b94pHrpRscBiWfsbSmwujB0yEqcT_I5K5levZhnOGaGWn5g'
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
@@ -132,11 +127,6 @@ def greetings(message):
                                    " который популяризирует ваш бренд, привлекает большое количество клиентов"
                                    " и дарит много позитивных эмоций от готового продукта."
                                    " Для начала работы нажмите на кнопку 'Начать'.", keyboard)
-
-
-def echo(message):
-    if message.stiker_id:
-        send_some_msg(user_id, "Мне не понятно это сообщение")
 
 
 if __name__ == '__main__':
