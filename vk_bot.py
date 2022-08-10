@@ -10,6 +10,11 @@ admin_id_2 = '303218316'
 
 admin_id_3 = '349580930'
 
+<<<<<<< HEAD
+=======
+word = ["привет!", "здравствуйте!", "hi!", "hello!", "Ку!", "как дела?", "привет", "здравствуйте", "hi", "hello", "ку"]
+
+>>>>>>> 794056ca76f8736559eb9b25a938848d50a84838
 TOKEN = ''
 
 session = vk_api.VkApi(token=TOKEN)
@@ -115,7 +120,7 @@ def send_question(message):
     send_some_msg(admin_id_3, "Пришел вопрос", keyboard)
 
 
-def greater(message):
+def greetings(message):
     pattern = [r"привет", r"здравствуйте"]
     for i in pattern:
         match = re.search(i, message)
@@ -139,7 +144,7 @@ if __name__ == '__main__':
         if event.type == VkEventType.MESSAGE_NEW and event.to_me:
             msg = event.text.lower()
             user_id = event.user_id
-            greater(msg)
+            greetings(msg)
             get_back()
             buy_ads(msg)
             buy_clip(msg)
