@@ -10,7 +10,7 @@ admin_id_2 = '303218316'
 
 admin_id_3 = '349580930'
 
-TOKEN = 'vk1.a.54KQQs-zBZ6bkh-UozaNE3klxpZ8azdc9Azi80_ceaDwFKHEC1i4bgVHr7MFYwfu2gIbn7HcMsM4ZX_f2_a1tKiquB3ucpE-A3gv53MWFRNDvu-iRm0AKRDn4xSYJ1ENCiYmv2Ljzc6nGU371b94pHrpRscBiWfsbSmwujB0yEqcT_I5K5levZhnOGaGWn5g'
+TOKEN = ''
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
