@@ -43,4 +43,20 @@ Write the command in the terminal:
 About the code:
 - The file config.py contains login information
 
+To send messages we use:
+
+        def send_some_msg(id_user, message, keyboard=None):
+        post = {'user_id': id_user, 'message': message, 'random_id': 0}
+        if keyboard is not None:
+            post['keyboard'] = keyboard.get_keyboard()
+        else:
+            pass
+        session.method("messages.send", post)
+
+Code base :
+    
+        if __name__ == '__main__':
+ 
+All other features are pretty standard.
+
 Hope this code helps you :crown:
