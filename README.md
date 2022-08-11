@@ -38,10 +38,9 @@ To send notifications to admins, use their id
 
 Write the command in the terminal:
 
-    python main.py
+    python vk_bot.py
 
 About the code:
-- The file words.py contains prepared messages
 - The file config.py contains login information
 
 Hope this code helps you :crown:
