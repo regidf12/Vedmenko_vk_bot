@@ -1,3 +1,0 @@
-# Interface for Vk API
-vk-api~=11.9.9
-
