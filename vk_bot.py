@@ -1,16 +1,17 @@
 import vk_api
 import re
 
+from config import TOKEN
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 
-admin_id = '225396367'
+admin_id_0 = '225396367'
 
-admin_id_2 = '303218316'
+admin_id_1 = '303218316'
 
-admin_id_3 = '349580930'
+admin_id_2 = '349580930'
 
-TOKEN = 'vk1.a.54KQQs-zBZ6bkh-UozaNE3klxpZ8azdc9Azi80_ceaDwFKHEC1i4bgVHr7MFYwfu2gIbn7HcMsM4ZX_f2_a1tKiquB3ucpE-A3gv53MWFRNDvu-iRm0AKRDn4xSYJ1ENCiYmv2Ljzc6nGU371b94pHrpRscBiWfsbSmwujB0yEqcT_I5K5levZhnOGaGWn5g'
+admin_id_3 = '333667069'
 
 session = vk_api.VkApi(token=TOKEN)
 session_api = session.get_api()
@@ -107,12 +108,13 @@ def get_back():
         send_some_msg(user_id, "Что вас интересует?", keyboard)
 
 
-def send_question(message):
+def send_question(event):
     keyboard = VkKeyboard(one_time=True)
-    keyboard.add_openlink_button(label='Перейти в чаты', link='https://vk.com/gim160010948?peers=303218316')
-    send_some_msg(admin_id, '{"Пришел вопрос"}', keyboard)
-    send_some_msg(admin_id_2, "Пришел вопрос", keyboard)
-    send_some_msg(admin_id_3, "Пришел вопрос", keyboard)
+    keyboard.add_openlink_button(label='Перейти в чаты', link='https://vk.com/gim160010948?sel=' + str(event.user_id))
+    send_some_msg(admin_id_0, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
+    send_some_msg(admin_id_1, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
+    send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
+    send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
 
 
 def greetings(message):
@@ -161,7 +163,7 @@ if __name__ == '__main__':
                     if event.type == VkEventType.MESSAGE_NEW and event.to_me:
                         send_some_msg(user_id, "Спасибо за ваш вопрос. "
                                                "Мы ответим на него в течении 24 часов", keyboard)
-                        send_question(msg)
+                        send_question(event)
                         break
             if msg == "сделать заказ":
                 keyboard = VkKeyboard(one_time=True)
