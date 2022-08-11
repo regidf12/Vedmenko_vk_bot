@@ -40,7 +40,7 @@ Write the command in the terminal:
 
     python vk_bot.py
 
-About the code:
+## About the code :electron:
 - The file config.py contains login information
 
 To send messages we use:
