@@ -114,7 +114,7 @@ def send_question(event):
     send_some_msg(admin_id_0, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
     send_some_msg(admin_id_1, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
     send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
-    send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
+    send_some_msg(admin_id_3, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
 
 
 def greetings(message):
