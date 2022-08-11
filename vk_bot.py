@@ -109,12 +109,15 @@ def get_back():
 
 
 def send_question(event):
-    keyboard = VkKeyboard(one_time=True)
-    keyboard.add_openlink_button(label='Перейти в чаты', link='https://vk.com/gim160010948?sel=' + str(event.user_id))
-    send_some_msg(admin_id_0, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
-    send_some_msg(admin_id_1, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
-    send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
-    send_some_msg(admin_id_3, "Вам новое сообщение. Хотите перейти в чат к пользователю?", keyboard)
+    get_back()
+    send_some_msg(admin_id_0, "Вам новое сообщение. Хотите перейти в чат к пользователю?")
+    send_some_msg(admin_id_0, "Перейти в чат: https://vk.com/gim160010948?sel=" + str(event.user_id))
+    send_some_msg(admin_id_1, "Вам новое сообщение. Хотите перейти в чат к пользователю?")
+    send_some_msg(admin_id_1, "Перейти в чат: https://vk.com/gim160010948?sel=" + str(event.user_id))
+    send_some_msg(admin_id_2, "Вам новое сообщение. Хотите перейти в чат к пользователю?")
+    send_some_msg(admin_id_2, "Перейти в чат: https://vk.com/gim160010948?sel=" + str(event.user_id))
+    send_some_msg(admin_id_3, "Вам новое сообщение. Хотите перейти в чат к пользователю?")
+    send_some_msg(admin_id_3, "Перейти в чат: https://vk.com/gim160010948?sel=" + str(event.user_id))
 
 
 def greetings(message):
