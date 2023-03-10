@@ -1,6 +1,6 @@
-# Welcome to White-prince :crown:
+# Welcome to Dive-into-dav
 
- [![White-prince](https://github.com/White-prince/White-prince/blob/main/assets/vk-head-andrew.png?raw=true)](http://white-prince.ru/)
+ [![]()]()
 
 You can follow me on my social networks:
 
