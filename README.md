@@ -14,7 +14,7 @@ You can follow me on my social networks:
 
 [![Facebook](https://img.shields.io/badge/-Facebook-131313?style=for-the-badge&logo=Facebook)](https://www.facebook.com/profile.php?id=100023988285502)
 
-# White-prince Vkontakte_bot :robot:
+# Vkontakte_bot :robot:
 The bot facilitates the work of Vedmenko production employees.
 
 ## Installation :gear:
