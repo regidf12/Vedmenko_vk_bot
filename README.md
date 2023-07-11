@@ -1,4 +1,3 @@
-# Welcome to Regidf
 # Vkontakte_bot :robot:
 The bot facilitates the work of Vedmenko production employees.
 
